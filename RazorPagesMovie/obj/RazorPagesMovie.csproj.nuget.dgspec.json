@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\code\\Aiursoft\\RazorPagesMovie\\RazorPagesMovie.csproj": {}
+    "C:\\code\\Aiursoft\\Creat-Razor-Webpage-G\\RazorPagesMovie\\RazorPagesMovie.csproj": {}
   },
   "projects": {
-    "C:\\code\\Aiursoft\\RazorPagesMovie\\RazorPagesMovie.csproj": {
+    "C:\\code\\Aiursoft\\Creat-Razor-Webpage-G\\RazorPagesMovie\\RazorPagesMovie.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\code\\Aiursoft\\RazorPagesMovie\\RazorPagesMovie.csproj",
+        "projectUniqueName": "C:\\code\\Aiursoft\\Creat-Razor-Webpage-G\\RazorPagesMovie\\RazorPagesMovie.csproj",
         "projectName": "RazorPagesMovie",
-        "projectPath": "C:\\code\\Aiursoft\\RazorPagesMovie\\RazorPagesMovie.csproj",
+        "projectPath": "C:\\code\\Aiursoft\\Creat-Razor-Webpage-G\\RazorPagesMovie\\RazorPagesMovie.csproj",
         "packagesPath": "C:\\Users\\szy\\.nuget\\packages\\",
-        "outputPath": "C:\\code\\Aiursoft\\RazorPagesMovie\\obj\\",
+        "outputPath": "C:\\code\\Aiursoft\\Creat-Razor-Webpage-G\\RazorPagesMovie\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
