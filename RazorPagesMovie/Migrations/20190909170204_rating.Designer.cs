@@ -10,8 +10,8 @@ using RazorPagesMovie.Models;
 namespace RazorPagesMovie.Migrations
 {
     [DbContext(typeof(RazorPagesMovieContext))]
-    [Migration("20190908210748_inital")]
-    partial class inital
+    [Migration("20190909170204_rating")]
+    partial class rating
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -37,13 +37,13 @@ namespace RazorPagesMovie.Migrations
                         .HasColumnType("decimal(18, 2)");
 
                     b.Property<string>("Rating")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(5)")
+                        .HasMaxLength(5);
 
                     b.Property<DateTime>("ReleaseDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Title")
-                        .IsRequired()
                         .HasColumnType("nvarchar(60)")
                         .HasMaxLength(60);
 
