@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Blog.Core.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -38,6 +39,15 @@ namespace Blog.Core.Controllers
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+
+        /// <summary>
+        /// Model注释展示测试
+        /// </summary>
+        /// <param name="love">model实体类参数</param>
+        [HttpPost]
+        public void Post(Love love)
+        {
         }
     }
 }
