@@ -23,6 +23,10 @@ namespace Blog.Core.Controllers
             _logger = logger;
         }
 
+        /// <summary>
+        /// 一个获取所有天气数据的API
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
