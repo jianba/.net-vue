@@ -28,6 +28,7 @@ namespace Blog.Core.Controllers
         /// 一个获取所有天气数据的API
         /// </summary>
         /// <returns></returns>
+        [ApiExplorerSettings(IgnoreApi = true)]
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
