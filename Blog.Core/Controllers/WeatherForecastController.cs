@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Blog.Core.Model;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -28,7 +29,8 @@ namespace Blog.Core.Controllers
         /// 一个获取所有天气数据的API
         /// </summary>
         /// <returns></returns>
-        [ApiExplorerSettings(IgnoreApi = true)]
+        //[ApiExplorerSettings(IgnoreApi = true)]
+        [Authorize]
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {

@@ -1,10 +1,12 @@
 using System;
 using System.IO;
+using System.Text;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
 namespace Blog.Core
@@ -26,6 +28,32 @@ namespace Blog.Core
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            SecurityKey securityKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("laozhanglaozhanglaozhanglaozhanglaozhang"));
+
+            services.AddAuthentication("Bearer")
+                .AddJwtBearer(o => {
+                    o.TokenValidationParameters = new TokenValidationParameters()
+                    {
+
+                        //3+2
+                        // 配置数字签名
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = securityKey,
+
+                        // 配置发行人参数
+                        ValidateIssuer = true,
+                        ValidIssuer = "issure",
+
+                        // 配置使用人参数
+                        ValidateAudience = true,
+                        ValidAudience = "audience",
+
+                        // 验证过期时间   // 验证生命周期
+                        RequireExpirationTime = true,                       
+                        ValidateLifetime = true
+                    };
+                });
 
             services.AddSwaggerGen(c =>
             {
@@ -72,6 +100,7 @@ namespace Blog.Core
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
