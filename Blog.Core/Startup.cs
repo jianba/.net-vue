@@ -45,7 +45,7 @@ namespace Blog.Core
                         ValidateIssuer = true,
                         ValidIssuer = "issure",
 
-                        // 配置使用人参数
+                        // 配置订阅人参数
                         ValidateAudience = true,
                         ValidAudience = "audience",
 

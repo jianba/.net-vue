@@ -30,8 +30,8 @@ namespace Blog.Core.Controllers
         /// </summary>
         /// <returns></returns>
         //[ApiExplorerSettings(IgnoreApi = true)]
-        [Authorize]
         [HttpGet]
+        [Authorize(Roles ="Admin")]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();

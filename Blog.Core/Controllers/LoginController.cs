@@ -11,7 +11,7 @@ namespace Blog.Core.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
-        
+
         public string GetToken()
         {
             //3+2
@@ -25,10 +25,11 @@ namespace Blog.Core.Controllers
                 expires: DateAndTime.Now.AddHours(1),
 
                 //授权策略
-                claims: new Claim[] { }
+                claims: new Claim[] {
+                new Claim(ClaimTypes.Role,"Admin")
+                }
                 );
             return new JwtSecurityTokenHandler().WriteToken(securityToken);
         }
-        
     }
 }
