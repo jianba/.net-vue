@@ -26,9 +26,10 @@ namespace Blog.Core.Controllers
 
                 //授权策略
                 claims: new Claim[] {
-                new Claim(ClaimTypes.Role,"Admin")
-                }
-                );
+                    new Claim("laozhang","laoli"),
+                    new Claim(ClaimTypes.Role,"AdminOrUser"),
+                    new Claim(ClaimTypes.Email,"Admin@qq.com"),
+                });
             return new JwtSecurityTokenHandler().WriteToken(securityToken);
         }
     }

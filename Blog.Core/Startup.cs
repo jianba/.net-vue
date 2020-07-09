@@ -29,6 +29,19 @@ namespace Blog.Core
         {
             services.AddControllers();
 
+            services.AddAuthorization(o =>
+            {
+                o.AddPolicy("AdminOrUser", o =>
+                 {
+                     o.RequireRole("Admin", "User").Build();
+                 });
+                
+                //o.AddPolicy("AdminAndUser", o =>
+                // {
+                //     o.RequireRole("Admin").RequireRole("User").Build();
+                // });
+            });
+
             SecurityKey securityKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("laozhanglaozhanglaozhanglaozhanglaozhang"));
 
             services.AddAuthentication("Bearer")

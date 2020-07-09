@@ -31,7 +31,13 @@ namespace Blog.Core.Controllers
         /// <returns></returns>
         //[ApiExplorerSettings(IgnoreApi = true)]
         [HttpGet]
-        [Authorize(Roles ="Admin")]
+        //[Authorize(Roles ="Admin")]
+        //[Authorize(Roles ="User")]
+
+        //与下面两个实例意思都不一样，就是单独的一个符号。
+        //[Authorize(Roles = "Admin,User")]
+        [Authorize(Roles = "AdminOrUser")]
+        //[Authorize(Roles = "AdminAndUser")]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
