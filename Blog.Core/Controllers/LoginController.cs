@@ -11,7 +11,7 @@ namespace Blog.Core.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
-
+        [HttpGet]
         public string GetToken()
         {
             //3+2
