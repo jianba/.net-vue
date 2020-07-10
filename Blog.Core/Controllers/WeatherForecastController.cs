@@ -39,7 +39,8 @@ namespace Blog.Core.Controllers
         //[Authorize(Roles = "AdminOrUser")]
         //[Authorize(Roles = "AdminAndUser")]
 
-        [Authorize(Policy = "AdminOrUser")]
+        //[Authorize(Policy = "AdminOrUser")]
+        [Authorize(Policy = "AdminAndUser")]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();

@@ -31,15 +31,15 @@ namespace Blog.Core
 
             services.AddAuthorization(o =>
             {
-                o.AddPolicy("AdminOrUser", o =>
-                 {
-                     o.RequireRole("Admin", "User").Build();
-                 });
-
-                //o.AddPolicy("AdminAndUser", o =>
+                //o.AddPolicy("AdminOrUser", o =>
                 // {
-                //     o.RequireRole("Admin").RequireRole("User").Build();
+                //     o.RequireRole("Admin", "User").Build();
                 // });
+
+                o.AddPolicy("AdminAndUser", o =>
+                 {
+                     o.RequireRole("Admin").RequireRole("User").Build();
+                 });
             });
 
             SecurityKey securityKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes("laozhanglaozhanglaozhanglaozhanglaozhang"));
