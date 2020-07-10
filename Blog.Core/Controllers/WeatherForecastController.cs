@@ -37,7 +37,9 @@ namespace Blog.Core.Controllers
         //与下面两个实例意思都不一样，就是一个字符串。
         //[Authorize(Roles = "Admin,User")]
         //[Authorize(Roles = "AdminOrUser")]
-        [Authorize(Roles = "AdminAndUser")]
+        //[Authorize(Roles = "AdminAndUser")]
+
+        [Authorize(Policy = "AdminOrUser")]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();

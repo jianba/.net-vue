@@ -28,7 +28,9 @@ namespace Blog.Core.Controllers
                 claims: new Claim[] {
                     new Claim("laozhang","laoli"),
                     //new Claim(ClaimTypes.Role,"AdminOrUser"),
-                    new Claim(ClaimTypes.Role,"AdminAndUser"),
+                    //new Claim(ClaimTypes.Role,"AdminAndUser"),
+                    new Claim(ClaimTypes.Role,"Admin"),
+                    new Claim(ClaimTypes.Role,"User"),
                     new Claim(ClaimTypes.Email,"Admin@qq.com"),
                 });
             return new JwtSecurityTokenHandler().WriteToken(securityToken);
